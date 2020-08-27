@@ -48,8 +48,8 @@ class AccountController extends Controller
       }
     }
 
-    if($exists){
-      $_SESSION['CurrentUser'] = $username;
+    if ($exists) {
+      app(SessionController::class)->setSession($username);
       return redirect()->route('pokemon');
     } else {
       return redirect()->route('login')

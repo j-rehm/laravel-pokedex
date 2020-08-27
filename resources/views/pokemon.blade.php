@@ -1,8 +1,13 @@
+@extends('layouts.app')
+@section('content')
+
 <?php
-include_once '../resources/views/header.blade.php';
 $star_full = url('/assets/star_full.svg');
 $star_empty = url('/assets/star_empty.svg');
 $url = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/';
+if (isset($_SESSION) && isset($_SESSION['CurrentUser'])) {
+  $trainer = $_SESSION['CurrentUser'];
+}
 ?>
 
 <h2><?=$header?></h2>
@@ -13,7 +18,6 @@ $url = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon
   <form method="POST" action="/team" class="pokemon" >
     @csrf
     <input type="hidden" name="id" value=<?=$p->Id?> />
-    <input type="hidden" name="team" value=<?=$p->Team?> />
     <input type="hidden" name="parent" value=<?=$parent?> />
     
     <div class="row">
@@ -21,10 +25,12 @@ $url = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon
       <div class="col">
         <div class="row pokemon-title">
           <h1 class="pokemon-species"><?=$p->Species?></h1>
-          @if($p->Team != 0)
-          <button type="action"><img src=<?=$star_full?> class="pokemon-favorite" /></button>
-          @else
-          <button type="action"><img src=<?=$star_empty?> class="pokemon-favorite" /></button>
+          @if(isset($trainer))
+            {{-- @if($p->Team != 0) --}}
+            {{-- <button type="action"><img src=<?=$star_full?> class="pokemon-favorite" /></button> --}}
+            {{-- @else --}}
+            <button type="action"><img src=<?=$star_empty?> class="pokemon-favorite" /></button>
+            {{-- @endif --}}
           @endif
         </div>
         <div class="row">
@@ -42,4 +48,4 @@ $url = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon
   @endforeach
 </div>
 
-<?php include_once '../resources/views/footer.blade.php'; ?>
+@endsection

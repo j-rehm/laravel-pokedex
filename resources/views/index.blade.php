@@ -1,6 +1,5 @@
-<?php
-include_once '../resources/views/header.blade.php';
-?>
+@extends('layouts.app')
+@section('content')
 
 <div class="section">
   <h2>Pokémon Manager</h2>
@@ -11,4 +10,4 @@ include_once '../resources/views/header.blade.php';
   <p>Click Team above to view the pokémon in your team. Click the star again to remove a pokémon from your team.</p>
 </div>
 
-<?php include_once '../resources/views/footer.blade.php'; ?>
+@endsection
