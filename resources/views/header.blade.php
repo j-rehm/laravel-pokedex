@@ -1,8 +1,10 @@
 <?php
   $title = "Pokémon Manager";
   $logo = url('/assets/pokeball.svg');
-  // $isAuth = session()->get('auth');
-  // $trainer = session().get('trainer');
+  // if (isset($_SESSION) && $_SESSION['CurrentUser']) {
+  //   $trainer = $_SESSION['CurrentUser'] ?? null;
+  // }
+  // $trainer = 'Ash';
 ?>
 
 <!DOCTYPE html>
@@ -25,13 +27,13 @@
         <li><a href="/pokemon" >Pokémon</a></li>
         <li><a href="/team" >Team</a></li>
         <span class="nav-right"></span>
-        @if($isAuth)
-        <li>Welcome, <?=$trainer?></li>
-        <li><a href="/logout" >Log Out</a></li>
-        @else
+        <!-- @if(isset($trainer)) -->
+        <!-- <li>Welcome, $trainer</li> -->
+        <!-- <li><a href="/logout" >Log Out</a></li> -->
+        <!-- @else -->
         <li><a href="/signup" >Sign Up</a></li>
         <li><a href="/login" >Login</a></li>
-        @endif
+        <!-- @endif -->
       </ul>
     </div>
   </nav>

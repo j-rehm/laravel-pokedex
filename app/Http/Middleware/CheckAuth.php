@@ -8,7 +8,10 @@ class CheckAuth
 {
     public function handle($request, Closure $next)
     {
-        // if ()
-        return $next($request);
+        if (isset($_SESSION) && $_SESSION['CurrentUser']) {
+            return $next($request);
+        } else {
+            return redirect()->route('index');
+        }
     }
 }
