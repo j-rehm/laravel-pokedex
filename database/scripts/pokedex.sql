@@ -261,4 +261,19 @@ INSERT INTO Pokemon(Id, Species, Type1, Type2) VALUES
 
 (150, 'Mewtwo', 'psychic', NULL),
 
-(151, 'Mew', 'psychic', NULL);
+(151, 'Mew', 'psychic', NULL),
+
+(152, 'Chikorita', 'grass', NULL),
+(153, 'Bayleef', 'grass', NULL),
+(154, 'Meganium', 'grass', NULL),
+
+(155, 'Cyndaquil', 'fire', NULL),
+(156, 'Quilava', 'fire', NULL),
+(157, 'Typhlosion', 'fire', NULL),
+
+(158, 'Totodile', 'water', NULL),
+(159, 'Croconaw', 'water', NULL),
+(160, 'Feraligatr', 'water', NULL),
+
+(161, 'Sentret', 'normal', NULL),
+(162, 'Furret', 'normal', NULL);
