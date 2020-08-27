@@ -2,12 +2,7 @@
 DROP DATABASE IF EXISTS pokedex;
 CREATE DATABASE pokedex;
 
-/* Create User */
--- CREATE USER IF NOT EXISTS 'trainer'@'localhost' IDENTIFIED BY 'password';
--- GRANT ALL PRIVILEGES ON pokedex . * TO 'trainer'@'localhost';
-FLUSH PRIVILEGES;
-
-/* Use Database */
+/* Use database */
 USE pokedex;
 
 /* Pokemon table */
@@ -22,7 +17,7 @@ CREATE TABLE Pokemon (
   Team INT NOT NULL DEFAULT 0
 );
 
-/* Create Trainer */
+/* Trainer table */
 CREATE TABLE Trainer (
   Id INT NOT NULL AUTO_INCREMENT PRIMARY KEY, 
   Username VARCHAR(25) NOT NULL,
@@ -35,9 +30,8 @@ CREATE TABLE Trainer (
   Pokemon6ID INT
 ); 
 
-
+/* Populate Pokemon table */
 INSERT INTO Pokemon(Id, Species, Type1, Type2) VALUES
-
 (1, 'Bulbasaur', 'grass', 'poison'),
 (2, 'Ivysaur', 'grass', 'poison'),
 (3, 'Venusaur', 'grass', 'poison'),
