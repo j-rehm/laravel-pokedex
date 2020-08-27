@@ -15,25 +15,25 @@ class TeamController extends Controller
     }
     
     $id = (int) $request->input('id');
-    $index = (int) $request->input('index'); // 3
+    $index = (int) $request->input('index');
     $parent = $request->input('parent');
 
     if ($parent == 'team') { // Remove pokemon from $trainer team
-      $removePokemon = 'Pokemon' . $index . 'ID'; // Pokemon3ID
-      DB::table('trainers')
-        ->where('username', '=', $trainer->name)
-        ->update([$removePokemon => null]);
+      DB::table('TeamMembers')
+        ->where('TrainerId', '=', $trainer->id)
+        ->where('PokemonId', '=', $id)
+        ->limit(1)
+        ->delete();
+
       app(SessionController::class)->updateSession();
-      $this->compact();
-    } else { // Add pokemon to $trainer team
-      $teamSize = count($trainer->pokemon);
-  
-      if ($teamSize < 6) {
-        $nextPokemon = 'Pokemon' . ($teamSize + 1) . 'ID';
-        DB::table('trainers')
-          ->where('username', '=', $trainer->name)
-          ->update([$nextPokemon => $id]);
-      }
+      // $this->compact();
+    } else { // Add pokemon to $trainer team      
+      DB::table('TeamMembers')
+        ->insert([
+          'TrainerId' => $trainer->id,
+          'PokemonId' => $id
+        ]);
+
       app(SessionController::class)->updateSession();
     }
 

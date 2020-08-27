@@ -17,14 +17,10 @@ class SessionController extends Controller
     foreach ($trainerDB as $key => $t) {
       $trainer->id = $t->Id;
       $trainer->name = $t->Username;
-      $pokemon = [];
-      for ($i = 1; $i <= 6; $i++) {
-        $p = $t->{'Pokemon' . $i . 'ID'};
-        if (isset($p)) {
-          $pokemon[$i - 1] = $p;
-        }
-      }
-      $trainer->pokemon = $pokemon;
+      $trainer->pokemon = DB::table('TeamMembers')
+                            ->where('TrainerId', '=', $trainer->id)
+                            ->join('Pokemon', 'Pokemon.Id', '=', 'TeamMembers.PokemonId')
+                            ->get();
     }
 
     $_SESSION['CurrentUser'] = $trainer;
