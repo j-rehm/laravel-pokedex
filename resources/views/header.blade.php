@@ -1,6 +1,8 @@
 <?php
   $title = "Pokémon Manager";
   $logo = url('/assets/pokeball.svg');
+  // $isAuth = session()->get('auth');
+  // $trainer = session().get('trainer');
 ?>
 
 <!DOCTYPE html>
@@ -18,13 +20,18 @@
   <nav class="nav-bar-blue">
     <div class="container">
       <ul>
-        <!-- <li id="nav-brand"><img src="http://localhost:8000/assets/pokeball.svg" id="logo" /></li> -->
         <li id="nav-brand"><img src=<?=$logo?> id="logo" /></li>
         <li><a href="/" >Home</a></li>
         <li><a href="/pokemon" >Pokémon</a></li>
         <li><a href="/team" >Team</a></li>
+        <span class="nav-right"></span>
+        @if($isAuth)
+        <li>Welcome, <?=$trainer?></li>
+        <li><a href="/logout" >Log Out</a></li>
+        @else
         <li><a href="/signup" >Sign Up</a></li>
         <li><a href="/login" >Login</a></li>
+        @endif
       </ul>
     </div>
   </nav>
