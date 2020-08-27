@@ -14,9 +14,25 @@ $i = 0;
 <h2><?=$header?></h2>
 <hr />
 
+
 <div class="pokemon-container">
   @foreach($pokemon as $key => $p)
   <?php $i++ ?>
+  {{-- Header to Indicate the Generation of Pokemon --}}
+  @if($p->Id == 1)
+  <form style='width:100%;background-color:#f15746;'>
+    <h1 style='text-align:center;color:white'>Generation 1</h1>
+  </form>
+  @elseif($p->Id == 152)
+  <form style='width:100%;background-color:#8fc854;'>
+    <h1 style='text-align:center;color:white'>Generation 2</h1>
+  </form>
+  @elseif($p->Id == 252)
+  <form style='width:100%;background-color:#6aa7db;'>
+    <h1 style='text-align:center;color:white'>Generation 3</h1>
+  </form>
+  @endif
+
   <form method="POST" action="/team" class="pokemon" >
     @csrf
     {{-- Form Post Data --}}
@@ -24,14 +40,6 @@ $i = 0;
     <input type="hidden" name="index" value=<?=$i?> />
     <input type="hidden" name="parent" value=<?=$parent?> />
     
-    {{-- Header to Indicate the Generation of Pokemon --}}
-    @if($p->Id == 1)
-    <h1>Generation 1</h1>
-    <hr />
-    @elseif($p->Id == 152)
-    <h1>Generation 2</h1>
-    <hr />
-
     {{-- Pokemon Card --}}
     <div class="row">
       <img src="<?=$url . $p->Id . '.png'?>" class="pokemon-sprite" />
