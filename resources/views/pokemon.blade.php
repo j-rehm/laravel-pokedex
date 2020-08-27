@@ -2,8 +2,10 @@
 @section('content')
 
 <?php
-$star_full = url('/assets/star_full.svg');
-$star_empty = url('/assets/star_empty.svg');
+// $icon_full = url('/assets/star_full.svg');
+// $icon_empty = url('/assets/star_empty.svg');
+$icon_full = url('/assets/pokeball_full.svg');
+$icon_empty = url('/assets/pokeball_empty.svg');
 $url = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/';
 if (isset($_SESSION) && isset($_SESSION['CurrentUser'])) {
   $trainer = $_SESSION['CurrentUser'];
@@ -30,13 +32,11 @@ $i = 0;
       <div class="col">
         <div class="row pokemon-title">
           <h1 class="pokemon-species"><?=$p->Species?></h1>
-          @if(isset($trainer))
-            {{-- @if($p->Team != 0) --}}
-            {{-- <button type="action"><img src=<?=$star_full?> class="pokemon-favorite" /></button> --}}
-            {{-- @else --}}
-            <button type="action"><img src=<?=$star_empty?> class="pokemon-favorite" /></button>
-            {{-- @endif --}}
-          @endif
+            @if($parent == 'team')
+            <button type="action"><img src=<?=$icon_full?> class="pokemon-favorite" /></button>
+            @else
+            <button type="action"><img src=<?=$icon_empty?> class="pokemon-favorite" /></button>
+            @endif
         </div>
         <div class="row">
           <div class="pokemon-type <?=$p->Type1?>"><p><?=$p->Type1?></p></div>
