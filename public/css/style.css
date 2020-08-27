@@ -1192,6 +1192,15 @@ img#logo {
   margin-top: 12px;
 }
 
+span.nav-buffer {
+  width: 100%;
+}
+
+li a {
+  white-space: nowrap;
+  overflow: hidden;
+}
+
 div#content {
   min-height: calc(100vh - 180px);
   padding-bottom: 30px;

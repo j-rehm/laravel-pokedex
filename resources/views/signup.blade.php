@@ -1,5 +1,7 @@
+@extends('layouts.app')
+@section('content')
+
 <?php
-include_once '../resources/views/header.blade.php';
 $error = session()->get('error');
 ?>
 
@@ -26,4 +28,4 @@ $error = session()->get('error');
     </form>
 </div>
 
-<?php include_once '../resources/views/footer.blade.php'; ?>
+@endsection

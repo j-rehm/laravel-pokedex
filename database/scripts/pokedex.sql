@@ -13,8 +13,7 @@ CREATE TABLE Pokemon (
   Type1 ENUM('normal', 'fighting', 'flying', 'poison', 'ground', 'rock', 'bug', 'ghost', 'steel', 'fire',
             'water', 'grass', 'electric', 'psychic', 'ice', 'dragon', 'dark', 'fairy') NOT NULL,
   Type2 ENUM('normal', 'fighting', 'flying', 'poison', 'ground', 'rock', 'bug', 'ghost', 'steel', 'fire',
-            'water', 'grass', 'electric', 'psychic', 'ice', 'dragon', 'dark', 'fairy') NULL,
-  Team INT NOT NULL DEFAULT 0
+            'water', 'grass', 'electric', 'psychic', 'ice', 'dragon', 'dark', 'fairy') NULL
 );
 
 /* Trainer table */
@@ -29,7 +28,7 @@ CREATE TABLE Trainers (
   Pokemon4ID INT,
   Pokemon5ID INT,
   Pokemon6ID INT
-); 
+);
 
 /* Populate Pokemon table */
 INSERT INTO Pokemon(Id, Species, Type1, Type2) VALUES
