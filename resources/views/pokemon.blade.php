@@ -24,6 +24,14 @@ $i = 0;
     <input type="hidden" name="index" value=<?=$i?> />
     <input type="hidden" name="parent" value=<?=$parent?> />
     
+    {{-- Header to Indicate the Generation of Pokemon --}}
+    @if($p->Id == 1)
+    <h1>Generation 1</h1>
+    <hr />
+    @elseif($p->Id == 152)
+    <h1>Generation 2</h1>
+    <hr />
+
     {{-- Pokemon Card --}}
     <div class="row">
       <img src="<?=$url . $p->Id . '.png'?>" class="pokemon-sprite" />
