@@ -1,5 +1,6 @@
 <?php
 include_once '../resources/views/header.blade.php';
+$error = session()->get('error');
 ?>
 
 <div class="center">
@@ -14,6 +15,9 @@ include_once '../resources/views/header.blade.php';
             <label>Password</label>
             <input name='password' type='password'/>
         </span>
+        @if($error)
+        <p class='error'><?=$error?></p>
+        @endif
         <input type='submit' />
     </form>
 </div>
