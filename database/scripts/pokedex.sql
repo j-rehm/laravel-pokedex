@@ -22,6 +22,20 @@ CREATE TABLE Pokemon (
   Team INT NOT NULL DEFAULT 0
 );
 
+/* Create Trainer */
+CREATE TABLE Trainer (
+  Id INT NOT NULL PRIMARY KEY, 
+  Username VARCHAR(25) NOT NULL,
+  Password VARCHAR(25) NOT NULL,
+  Pokemon1ID INT,
+  Pokemon2ID INT,
+  Pokemon3ID INT,
+  Pokemon4ID INT,
+  Pokemon5ID INT,
+  Pokemon6ID INT
+); 
+
+
 INSERT INTO Pokemon(Id, Species, Type1, Type2) VALUES
 
 (1, 'Bulbasaur', 'grass', 'poison'),
