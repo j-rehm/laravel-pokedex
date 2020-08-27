@@ -35,6 +35,27 @@ class AccountController extends Controller
         ->with( ['error' => 'Passwords do not match.'] );
     }
   }
+
+  public function Login (Request $request) {
+    $username = $request->input('username');
+
+    $trainers = DB::table('trainers')->get();
+
+    $exists = false; 
+    foreach ($trainers as $key => $value) {
+      if($value->Username == $username){
+        $exists = true;
+      }
+    }
+
+    if($exists){
+      $_SESSION['CurrentUser'] = $username;
+      return redirect()->route('pokemon');
+    } else {
+      return redirect()->route('login')
+      ->with( ['error' => 'The account does not exist.'] );
+    }
+  }
 }
 
 ?>

@@ -33,17 +33,15 @@ Route::post('/team', 'TeamController@toggle');
 // SIGN UP
 Route::get('/signup', function () {
     return view('signup', [
-        'error' => null,
-        'accountMatch' => null
+        'error' => null
     ]);
 })->name('signup');
 Route::post('/signup', 'AccountController@SignUp');
 
 // LOG IN
 Route::get('/login', function () {
-    $trainers = DB::table('trainers')
-               ->get();
     return view('login', [
-        'trainers' => $trainers
+        'error' => null
     ]);
 })->name('login');
+Route::post('/login', 'AccountController@Login');
