@@ -18,7 +18,8 @@ CREATE TABLE Pokemon (
 );
 
 /* Trainer table */
-CREATE TABLE Trainer (
+DROP TABLE IF EXISTS Trainers;
+CREATE TABLE Trainers (
   Id INT NOT NULL AUTO_INCREMENT PRIMARY KEY, 
   Username VARCHAR(25) NOT NULL,
   Password VARCHAR(25) NOT NULL,
