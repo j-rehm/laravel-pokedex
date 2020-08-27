@@ -10,6 +10,7 @@ class CheckAuth
     {
         if (isset($_SESSION) && isset($_SESSION['CurrentUser'])) {
             return $next($request);
+            app(SessionController::class)->updateSession();
         } else {
             return redirect()->route('index');
         }

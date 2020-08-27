@@ -8,6 +8,7 @@ $url = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon
 if (isset($_SESSION) && isset($_SESSION['CurrentUser'])) {
   $trainer = $_SESSION['CurrentUser'];
 }
+$i = 0;
 ?>
 
 <h2><?=$header?></h2>
@@ -15,11 +16,15 @@ if (isset($_SESSION) && isset($_SESSION['CurrentUser'])) {
 
 <div class="pokemon-container">
   @foreach($pokemon as $key => $p)
+  <?php $i++ ?>
   <form method="POST" action="/team" class="pokemon" >
     @csrf
+    {{-- Form Post Data --}}
     <input type="hidden" name="id" value=<?=$p->Id?> />
+    <input type="hidden" name="index" value=<?=$i?> />
     <input type="hidden" name="parent" value=<?=$parent?> />
     
+    {{-- Pokemon Card --}}
     <div class="row">
       <img src="<?=$url . $p->Id . '.png'?>" class="pokemon-sprite" />
       <div class="col">

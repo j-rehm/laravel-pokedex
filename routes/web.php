@@ -2,6 +2,11 @@
 
 use Illuminate\Support\Facades\Route;
 
+// TEMP
+Route::get('/temp', function () {
+    return view('temp');
+})->name('temp');
+
 // INDEX
 Route::get('/', function () {
     return view('index');
@@ -9,7 +14,7 @@ Route::get('/', function () {
 
 // POKEMON
 Route::get('/pokemon', function () {
-    $pokemon = DB::table('pokemon')->get();
+    $pokemon = getAllPokemon();
     return view('pokemon', [
         'header' => 'Available Pokémon',
         'parent' => 'pokemon',
@@ -19,7 +24,7 @@ Route::get('/pokemon', function () {
 
 // TEAM
 Route::get('/team', function () {
-    $pokemon = getPokemon();
+    $pokemon = getTeamPokemon();
     return view('pokemon', [
         'header' => 'My Pokémon',
         'parent' => 'team',
@@ -53,40 +58,28 @@ Route::get('/logout', function () {
 })->name('logout');
 
 // HELPER METHODS
-function getPokemon () {
+function getAllPokemon () {
+    $pokemonDB = DB::table('pokemon')->get();
+    $pokemon = [];
+    foreach ($pokemonDB as $key => $p) {
+        array_push($pokemon, $p);
+    }
+    return $pokemon;
+}
+
+function getTeamPokemon () {
     if (isset($_SESSION) && isset($_SESSION['CurrentUser'])) {
         $trainer = $_SESSION['CurrentUser'];
     }
 
-    // return DB::table('pokemon')
-    //          ->whereIn('id', array(
-    //             $trainer->pokemon[0],
-    //             $trainer->pokemon[1],
-    //             $trainer->pokemon[2],
-    //             $trainer->pokemon[3],
-    //             $trainer->pokemon[4],
-    //             $trainer->pokemon[5],
-    //          ))
-    //          ->get();
-
-    $pokemonArray = [];
-
+    $pokemon = [];
     foreach ($trainer->pokemon as $key => $Id) {
-        array_push($pokemonArray , DB::table('pokemon')
-                ->where('Id', '=', $Id)
-                ->get());
+        if (isset($Id)) {
+            $p = DB::table('pokemon')
+                   ->where('Id', '=', $Id)
+                   ->get();
+            array_push($pokemon, $p);
+        }
     }
-
-    var_dump($pokemonArray);
-
-    // foreach ($pokemonDB as $key => $p) {
-    //     $pokemon->Id = $p->Id;
-    //     $pokemon->Species = $p->Species;
-    //     $pokemon->Type1 = $p->Type1;
-    //     $pokemon->Type2 = $p->Type2;
-    // }
-
-    // var_dump($pokemon);
-
-    return $pokemonArray;
+    return $pokemon;
 }

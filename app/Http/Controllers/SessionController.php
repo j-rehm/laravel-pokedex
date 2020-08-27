@@ -21,7 +21,7 @@ class SessionController extends Controller
       for ($i = 1; $i <= 6; $i++) {
         $p = $t->{'Pokemon' . $i . 'ID'};
         if (isset($p)) {
-          array_push($pokemon, $p);
+          $pokemon[$i - 1] = $p;
         }
       }
       $trainer->pokemon = $pokemon;
@@ -31,7 +31,7 @@ class SessionController extends Controller
   }
   
   public function updateSession () {
-    setSession($_SESSION['CurrentUser']->name);
+    $this->setSession($_SESSION['CurrentUser']->name);
   }
 
   public function unsetSession () {
