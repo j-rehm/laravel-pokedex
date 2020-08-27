@@ -3,8 +3,8 @@ DROP DATABASE IF EXISTS pokedex;
 CREATE DATABASE pokedex;
 
 /* Create User */
-CREATE USER IF NOT EXISTS 'trainer'@'localhost' IDENTIFIED BY 'password';
-GRANT ALL PRIVILEGES ON pokedex . * TO 'trainer'@'localhost';
+-- CREATE USER IF NOT EXISTS 'trainer'@'localhost' IDENTIFIED BY 'password';
+-- GRANT ALL PRIVILEGES ON pokedex . * TO 'trainer'@'localhost';
 FLUSH PRIVILEGES;
 
 /* Use Database */
