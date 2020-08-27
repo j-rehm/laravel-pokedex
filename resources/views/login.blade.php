@@ -2,11 +2,20 @@
 include_once '../resources/views/header.blade.php';
 ?>
 
-<h1>Login</h1>
-<form method='post' action='/login'>
-    <input name='username' placeholder='Enter A Username...'/>
-    <input name='password' type='password'/>\
-    <button type='Submit'>Submit</button>
-</form>
+<div class="center">
+    <form method='POST' action='/login'>
+        @csrf
+        <h2>Login</h2>
+        <span>
+            <label>Username</label>
+            <input name='username' type='text'/>
+        </span>
+        <span>
+            <label>Password</label>
+            <input name='password' type='password'/>
+        </span>
+        <input type='submit' />
+    </form>
+</div>
 
 <?php include_once '../resources/views/footer.blade.php'; ?>

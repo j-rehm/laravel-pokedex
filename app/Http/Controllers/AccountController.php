@@ -14,8 +14,17 @@ class AccountController extends Controller
     $password = $request->input('password');
     $confirmPass = $request->input('confirmPass');
 
+    $trainers = DB::select('select * from trainers');
+
+    foreach ($trainers as $key => $value) {
+      if($value->Username == $username){
+        return redirect()->route('signup')
+        ->with( ['error' => 'Account already exists!'] );
+      }
+    }
+
     if ($password == $confirmPass) {
-        DB::table('trainer')
+        DB::table('trainers')
             ->insert([
                 ['username' => $username, 'password' => $password]
             ]);
