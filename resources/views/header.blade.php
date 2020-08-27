@@ -22,6 +22,8 @@
         <li><a href="/" >Home</a></li>
         <li><a href="/pokemon" >Pokémon</a></li>
         <li><a href="/team" >Team</a></li>
+        <li><a href="/signup" >Sign Up</a></li>
+        <li><a href="/login" >Login</a></li>
       </ul>
     </div>
   </nav>

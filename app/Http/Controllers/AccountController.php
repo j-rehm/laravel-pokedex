@@ -10,28 +10,21 @@ class AccountController extends Controller
 {
   
   public function SignUp (Request $request) {
-    $id = (int) $request->input('id');
-    $team = (int) $request->input('team');
-    $parent = $request->input('parent');
+    $username = $request->input('username');
+    $password = $request->input('password');
+    $confirmPass = $request->input('confirmPass');
 
-    $pokemon = DB::table('pokemon')
-                 ->where('team', '=', 1)
-                 ->get();
-    $teamSize = count($pokemon);
-
-    if ($team == 0) {
-      if ($teamSize < 6) {
-        DB::table('pokemon')
-          ->where('Id', $id)
-          ->update(['Team' => 1]);
-      }
+    if ($password == $confirmPass) {
+        DB::table('trainer')
+            ->insert([
+                ['username' => $username, 'password' => $password]
+            ]);
+    
+        return redirect()->route('login');
     } else {
-      DB::table('pokemon')
-        ->where('Id', $id)
-        ->update(['Team' => 0]);
+        return redirect()->route('signup')
+        ->with( ['error' => 'Passwords do not match.'] );
     }
-
-    return redirect()->route($parent);
   }
 }
 
