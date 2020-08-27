@@ -24,7 +24,7 @@ CREATE TABLE Pokemon (
 
 /* Create Trainer */
 CREATE TABLE Trainer (
-  Id INT NOT NULL PRIMARY KEY, 
+  Id INT NOT NULL AUTO_INCREMENT PRIMARY KEY, 
   Username VARCHAR(25) NOT NULL,
   Password VARCHAR(25) NOT NULL,
   Pokemon1ID INT,
