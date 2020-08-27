@@ -72,14 +72,10 @@ function getTeamPokemon () {
         $trainer = $_SESSION['CurrentUser'];
     }
 
-    $pokemon = [];
-    foreach ($trainer->pokemon as $key => $Id) {
-        if (isset($Id)) {
-            $p = DB::table('pokemon')
-                   ->where('Id', '=', $Id)
-                   ->get();
-            array_push($pokemon, $p);
-        }
-    }
+    $pokemon = DB::table('TeamMembers')
+                 ->where('TrainerId', '=', $trainer->id)
+                 ->join('Pokemon', 'Pokemon.Id', '=', 'TeamMembers.PokemonId')
+                 ->get();
+
     return $pokemon;
 }

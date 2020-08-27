@@ -21,13 +21,13 @@ DROP TABLE IF EXISTS Trainers;
 CREATE TABLE Trainers (
   Id INT NOT NULL AUTO_INCREMENT PRIMARY KEY, 
   Username VARCHAR(25) NOT NULL,
-  Password VARCHAR(25) NOT NULL,
-  Pokemon1ID INT,
-  Pokemon2ID INT,
-  Pokemon3ID INT,
-  Pokemon4ID INT,
-  Pokemon5ID INT,
-  Pokemon6ID INT
+  Password VARCHAR(25) NOT NULL
+);
+
+DROP TABLE IF EXISTS TeamMembers;
+CREATE TABLE TeamMembers (
+  TrainerId INT NOT NULL,
+  PokemonId INT NOT NULL
 );
 
 /* Populate Pokemon table */
