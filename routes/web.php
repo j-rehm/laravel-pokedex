@@ -58,21 +58,35 @@ function getPokemon () {
         $trainer = $_SESSION['CurrentUser'];
     }
 
-    return DB::table('pokemon')
-             ->whereIn('id', array(
-                $trainer->pokemon[0],
-                $trainer->pokemon[1],
-                $trainer->pokemon[2],
-                $trainer->pokemon[3],
-                $trainer->pokemon[4],
-                $trainer->pokemon[5],
-             ))
-             ->get();
+    // return DB::table('pokemon')
+    //          ->whereIn('id', array(
+    //             $trainer->pokemon[0],
+    //             $trainer->pokemon[1],
+    //             $trainer->pokemon[2],
+    //             $trainer->pokemon[3],
+    //             $trainer->pokemon[4],
+    //             $trainer->pokemon[5],
+    //          ))
+    //          ->get();
 
-    // foreach ($trainer->pokemon as $key => $id) {
-    //     $p = DB::table('pokemon')
-    //            ->where('id', '=', $id)
-    //            ->get();
-    //     array_push($pokemon, $p);
+    $pokemonArray = [];
+
+    foreach ($trainer->pokemon as $key => $Id) {
+        array_push($pokemonArray , DB::table('pokemon')
+                ->where('Id', '=', $Id)
+                ->get());
+    }
+
+    var_dump($pokemonArray);
+
+    // foreach ($pokemonDB as $key => $p) {
+    //     $pokemon->Id = $p->Id;
+    //     $pokemon->Species = $p->Species;
+    //     $pokemon->Type1 = $p->Type1;
+    //     $pokemon->Type2 = $p->Type2;
     // }
+
+    // var_dump($pokemon);
+
+    return $pokemonArray;
 }
