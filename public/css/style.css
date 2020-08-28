@@ -1291,6 +1291,19 @@ form.generation h1 {
   margin: 6px 0 6px 0;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+form.prompt {
+  border: 4px solid #829ED2;
+  border-radius: 24px;
+  font-family: 'Press Start 2P';
+  font-size: 10pt;
+}
+
+form.prompt p{
+  margin: 0;
+}
+
 div.pokemon-type {
   width: 90px;
   height: 25px;
