@@ -2,11 +2,6 @@
 
 use Illuminate\Support\Facades\Route;
 
-// TEMP
-Route::get('/temp', function () {
-    return view('temp');
-})->name('temp');
-
 // INDEX
 Route::get('/', function () {
     return view('index');
@@ -32,7 +27,9 @@ Route::get('/team', function () {
     ]);
 })
 ->name('team')
+// must be logged in to access team page
 ->middleware('checkAuth');
+// Form route - add/remove pokemon
 Route::post('/team', 'TeamController@toggle');
 
 // SIGN UP
@@ -41,6 +38,7 @@ Route::get('/signup', function () {
         'error' => null
     ]);
 })->name('signup');
+// Form route - sign up
 Route::post('/signup', 'AccountController@SignUp');
 
 // LOG IN
@@ -49,6 +47,7 @@ Route::get('/login', function () {
         'error' => null
     ]);
 })->name('login');
+// Form route - log in
 Route::post('/login', 'AccountController@Login');
 
 // LOG OUT
@@ -58,6 +57,7 @@ Route::get('/logout', function () {
 })->name('logout');
 
 // HELPER METHODS
+// Get all pokemon from database
 function getAllPokemon () {
     $pokemonDB = DB::table('pokemon')->get();
     $pokemon = [];
@@ -67,11 +67,13 @@ function getAllPokemon () {
     return $pokemon;
 }
 
+// Get pokemon that belong to the trainer
 function getTeamPokemon () {
     if (isset($_SESSION) && isset($_SESSION['CurrentUser'])) {
         $trainer = $_SESSION['CurrentUser'];
     }
 
+    // Join over TeamMembers and Pokemon to get trainer's pokemon team
     $pokemon = DB::table('TeamMembers')
                  ->where('TrainerId', '=', $trainer->id)
                  ->join('Pokemon', 'Pokemon.Id', '=', 'TeamMembers.PokemonId')
