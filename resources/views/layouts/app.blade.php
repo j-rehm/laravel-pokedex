@@ -28,7 +28,7 @@
         <li><a href="/team" >Team</a></li>
         @endif
         <span class="nav-buffer"></span>
-        @if(isset($trainer))
+        @if(isset($trainer) && isset($trainer->name))
         <li><a href="/team" ><?=$trainer->name?></a></li>
         <li><a href="/logout" >Log Out</a></li>
         @else

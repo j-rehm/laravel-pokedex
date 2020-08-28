@@ -32,6 +32,8 @@ CREATE TABLE TeamMembers (
 
 /* Populate Pokemon table */
 INSERT INTO Pokemon(Id, Species, Type1, Type2) VALUES
+
+/* GEN 1 */
 (1, 'Bulbasaur', 'grass', 'poison'),
 (2, 'Ivysaur', 'grass', 'poison'),
 (3, 'Venusaur', 'grass', 'poison'),
@@ -262,8 +264,7 @@ INSERT INTO Pokemon(Id, Species, Type1, Type2) VALUES
 
 (151, 'Mew', 'psychic', NULL),
 
--- GEN 2
-
+/* GEN 2 */
 (152, 'Chikorita', 'grass', NULL),
 (153, 'Bayleef', 'grass', NULL),
 (154, 'Meganium', 'grass', NULL),
@@ -431,7 +432,7 @@ INSERT INTO Pokemon(Id, Species, Type1, Type2) VALUES
 
 (251, 'Celebi', 'grass', 'psychic'),
 
--- GEN 3
+/* GEN 3 */
 (252, 'Treecko', 'grass', NULL),
 (253, 'Grovyle', 'grass', NULL),
 (254, 'Sceptile', 'grass', NULL),
