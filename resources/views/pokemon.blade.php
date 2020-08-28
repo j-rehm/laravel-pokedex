@@ -55,16 +55,18 @@ $i = 0;
       <div class="col">
         <div class="row pokemon-title">
           <h1 class="pokemon-species"><?=$p->Species?></h1>
-          <?php
-            $caught = count(DB::table('TeamMembers')
-                              ->where('TrainerId', '=', $trainer->id)
-                              ->where('PokemonId', '=', $p->Id)
-                              ->get());
-          ?>
-          @if($caught)
-          <button type="action"><img src=<?=$icon_full?> class="pokemon-favorite" /></button>
-          @else
-          <button type="action"><img src=<?=$icon_empty?> class="pokemon-favorite" /></button>
+          @if(isset($trainer))
+            <?php
+                $caught = count(DB::table('TeamMembers')
+                                  ->where('TrainerId', '=', $trainer->id)
+                                  ->where('PokemonId', '=', $p->Id)
+                                  ->get());
+            ?>
+            @if($caught)
+            <button type="action"><img src=<?=$icon_full?> class="pokemon-favorite" /></button>
+            @else
+            <button type="action"><img src=<?=$icon_empty?> class="pokemon-favorite" /></button>
+            @endif
           @endif
         </div>
         <div class="row">

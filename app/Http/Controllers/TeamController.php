@@ -41,8 +41,9 @@ class TeamController extends Controller
       app(SessionController::class)->updateSession();
     }
 
-    // Route to calling page
-    return redirect()->route($parent);
+    // Route to previous page
+    // return redirect()->route($parent);
+    return redirect(url()->previous());
   }
 
 }

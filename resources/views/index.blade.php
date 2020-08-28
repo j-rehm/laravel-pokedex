@@ -24,16 +24,17 @@
   <br/>
   <h2>Instructions</h2>
   <hr/>
-  <p>This is a website to organize your preferred team of the first three generations of pokémon.</p>
+  <h3>About</h3>
+  <p>This is a website to organize your preferred team from the first three generations of Pokémon.</p>
   <br/>
   <h3>Setting Up Your Trainer Account</h3>
   <p>If you don't have an account, click on the Sign Up button to register yourself as a new trainer</p>
   <p>Those who have an account already can simply click on the Login button</p>
   <br/>
   <h3>Building your Pokémon team</h3>
-  <p>Click Pokémon above to get started. Capture the pokémon you would like with the Pokéball icon and add them to your team.</p>
+  <p>Click <a href="/pokemon" >Pokémon</a> to get started. Capture the pokémon you would like with the Pokéball icon to add them to your team.</p>
   <p>Note: you may only have up to 6 pokémon on your team at any given time!</p>
-  <p>Click Team above to view the pokémon in your team. Click the Pokéball icon again to remove the pokémon from your team.</p>
+  <p>Click <a href="/team" >Team</a> to view the pokémon in your team. Click the Pokéball icon again to remove the pokémon from your team.</p>
 </div>
 
 @endsection

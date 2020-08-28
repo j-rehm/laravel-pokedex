@@ -10,7 +10,7 @@ $error = session()->get('error');
         @csrf
         <h2>Sign Up</h2>
         <span>
-            <label>Username</label>
+            <label>Trainer Name</label>
             <input name='username' type='text' />
         </span>
         <span>
