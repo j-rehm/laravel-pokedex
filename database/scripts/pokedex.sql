@@ -262,6 +262,8 @@ INSERT INTO Pokemon(Id, Species, Type1, Type2) VALUES
 
 (151, 'Mew', 'psychic', NULL),
 
+-- GEN 2
+
 (152, 'Chikorita', 'grass', NULL),
 (153, 'Bayleef', 'grass', NULL),
 (154, 'Meganium', 'grass', NULL),
@@ -331,7 +333,6 @@ INSERT INTO Pokemon(Id, Species, Type1, Type2) VALUES
 (195, 'Quagsire', 'water', 'ground'),
 
 (196, 'Espeon', 'psychic', NULL),
-
 (197, 'Umbreon', 'dark', NULL),
 
 (198, 'Murkrow', 'dark', 'flying'),
@@ -391,13 +392,54 @@ INSERT INTO Pokemon(Id, Species, Type1, Type2) VALUES
 (228, 'Houndour', 'dark', 'fire'),
 (229, 'Houndoom', 'dark', 'fire'),
 
-(230, 'Kingdra', 'water', 'dragon');
+(230, 'Kingdra', 'water', 'dragon'),
 
+(231, 'Phanpy', 'ground', NULL),
+(232, 'Donphan', 'ground', NULL),
 
+(233, 'Porygon2', 'normal', NULL),
 
+(234, 'Stantler', 'normal', NULL),
 
+(235, 'Smeargle', 'normal', NULL),
 
+(236, 'Tyrogue', 'fighting', NULL),
+(237, 'Hitmontop', 'fighting', NULL),
 
+(238, 'Smoochum', 'ice', 'psychic'),
 
+(239, 'Elekid', 'electric', NULL),
 
+(240, 'Magby', 'fire', NULL),
 
+(241, 'Miltank', 'normal', NULL),
+(242, 'Blissey', 'normal', NULL),
+
+(243, 'Raikou', 'electric', NULL),
+
+(244, 'Entei', 'fire', NULL),
+
+(245, 'Suicune', 'water', NULL),
+
+(246, 'Larvitar', 'rock', 'ground'),
+(247, 'Pupitar', 'rock', 'ground'),
+(248, 'Tyranitar', 'rock', 'dark'),
+
+(249, 'Lugia', 'psychic', 'flying'),
+
+(250, 'Ho-Oh', 'fire', 'flying'),
+
+(251, 'Celebi', 'grass', 'psychic'),
+
+-- GEN 3
+(252, 'Treecko', 'grass', NULL),
+(253, 'Grovyle', 'grass', NULL),
+(254, 'Sceptile', 'grass', NULL),
+
+(255, 'Torchic', 'fire', NULL),
+(256, 'Combusken', 'fire', 'fighting'),
+(257, 'Blaziken', 'fire', 'fighting'),
+
+(258, 'Mudkip', 'water', NULL),
+(259, 'Marshtomp', 'water', 'ground'),
+(260, 'Swampert', 'water', 'ground');
