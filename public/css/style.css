@@ -1269,6 +1269,28 @@ div.id-container {
   align-self: flex-end;
 }
 
+hr {
+  margin-bottom: 20px;
+}
+
+form.generation {
+  width: 100%;
+}
+form.generation#gen-1 {
+  background-color: #F15746;
+}
+form.generation#gen-2 {
+  background-color: #8FC854;
+}
+form.generation#gen-3 {
+  background-color: #6AA7Db;
+}
+form.generation h1 {
+  text-align: center;
+  color: white;
+  margin: 6px 0 6px 0;
+}
+
 div.pokemon-type {
   width: 90px;
   height: 25px;

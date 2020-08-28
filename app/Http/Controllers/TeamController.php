@@ -26,43 +26,19 @@ class TeamController extends Controller
         ->delete();
 
       app(SessionController::class)->updateSession();
-      // $this->compact();
-    } else { // Add pokemon to $trainer team      
-      DB::table('TeamMembers')
-        ->insert([
-          'TrainerId' => $trainer->id,
-          'PokemonId' => $id
-        ]);
+    } else { // Add pokemon to $trainer team
+      if (count($trainer->pokemon) < 6) {
+        DB::table('TeamMembers')
+          ->insert([
+            'TrainerId' => $trainer->id,
+            'PokemonId' => $id
+          ]);
+      }
 
       app(SessionController::class)->updateSession();
     }
 
     return redirect()->route($parent);
-  }
-
-  private function compact () {
-    if (isset($_SESSION) && isset($_SESSION['CurrentUser'])) {
-      $trainer = $_SESSION['CurrentUser'];
-    }
-    var_dump($trainer->pokemon);
-    echo('<br />');
-
-    $pokemonIds = [];
-    foreach ($trainer->pokemon as $key => $id) {
-      if (isset($id)) {
-        array_push($pokemonIds, $id);
-      }
-    }
-
-    for ($i = 1; $i <= 6; $i++) {
-      $val = isset($pokemonIds[$i - 1])? $pokemonIds[$i - 1] : null;
-      $nextPokemon = 'Pokemon' . $i . 'ID';
-      echo($nextPokemon . ': ' . ($val? $val : 'NULL') . '<br />');
-      DB::table('trainers')
-        ->where('username', '=', $trainer->name)
-        ->update([$nextPokemon => $val]);
-    }
-    app(SessionController::class)->updateSession();
   }
 
 }
