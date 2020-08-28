@@ -275,4 +275,129 @@ INSERT INTO Pokemon(Id, Species, Type1, Type2) VALUES
 (160, 'Feraligatr', 'water', NULL),
 
 (161, 'Sentret', 'normal', NULL),
-(162, 'Furret', 'normal', NULL);
+(162, 'Furret', 'normal', NULL),
+
+(163, 'Hoothoot', 'normal', 'flying'),
+(164, 'Noctowl', 'normal', 'flying'),
+
+(165, 'Ledyba', 'bug', 'flying'),
+(166, 'Ledian', 'bug', 'flying'),
+
+(167, 'Spinarak', 'bug', 'poison'),
+(168, 'Ariados', 'bug', 'poison'),
+
+(169, 'Crobat', 'poison', 'flying'),
+
+(170, 'Chinchou', 'water', 'electric'),
+(171, 'Lanturn', 'water', 'electric'),
+
+(172, 'Pichu', 'electric', NULL),
+
+(173, 'Cleffa', 'Fairy', NULL),
+
+(174, 'Igglybuff', 'normal', 'fairy'),
+
+(175, 'Togepi', 'fairy', NULL),
+(176, 'Togetic', 'fairy', 'flying'),
+
+(177, 'Natu', 'psychic', 'flying'),
+(178, 'Xatu', 'psychic', 'flying'),
+
+(179, 'Mareep', 'electric', NULL),
+(180, 'Flaaffy', 'electric', NULL),
+(181, 'Ampharos', 'electric', NULL),
+
+(182, 'Bellossom', 'grass', NULL),
+
+(183, 'Marill', 'water', 'fairy'),
+(184, 'Azumarill', 'water', 'fairy'),
+
+(185, 'Sudowoodo', 'rock', NULL),
+
+(186, 'Politoed', 'water', NULL),
+
+(187, 'Hoppip', 'grass', 'flying'),
+(188, 'Skiploom', 'grass', 'flying'),
+(189, 'Jumpluff', 'grass', 'flying'),
+
+(190, 'Aipom', 'normal', NULL),
+
+(191, 'Sunkern', 'grass', NULL),
+(192, 'Sunflora', 'grass', NULL),
+
+(193, 'Yanma', 'Bug', 'Flying'),
+
+(194, 'Wooper', 'water', 'ground'),
+(195, 'Quagsire', 'water', 'ground'),
+
+(196, 'Espeon', 'psychic', NULL),
+
+(197, 'Umbreon', 'dark', NULL),
+
+(198, 'Murkrow', 'dark', 'flying'),
+
+(199, 'Slowking', 'water', 'psychic'),
+
+(200, 'Misdreavus', 'ghost', NULL),
+
+(201, 'Unown', 'psychic', NULL),
+
+(202, 'Wobbuffet', 'psychic', NULL),
+
+(203, 'Girafarig', 'normal', 'psychic'),
+
+(204, 'Pineco', 'bug', NULL),
+(205, 'Forretress', 'bug', 'steel'),
+
+(206, 'Dunsparce', 'normal', NULL),
+
+(207, 'Gligar', 'ground', 'flying'),
+
+(208, 'Steelix', 'steel', 'ground'),
+
+(209, 'Snubbull', 'fairy', NULL),
+(210, 'Granbull', 'fairy', NULL),
+
+(211, 'Qwilfish', 'water', 'poison'),
+
+(212, 'Scizor', 'bug', 'steel'),
+
+(213, 'Schuckle', 'bug', 'rock'),
+
+(214, 'Heracross', 'bug', 'fighting'),
+
+(215, 'Sneasel', 'dark', 'ice'),
+
+(216, 'Teddiursa', 'normal', NULL),
+(217, 'Ursaring', 'normal', NULL),
+
+(218, 'Slugma', 'fire', NULL),
+(219, 'Magcargo', 'fire', 'rock'),
+
+(220, 'Swinub', 'ice', 'ground'),
+(221, 'Piloswine', 'ice', 'ground'),
+
+(222, 'Corsola', 'water', 'rock'),
+
+(223, 'Remoraid', 'water', NULL),
+(224, 'Octillery', 'water', NULL),
+
+(225, 'Delibird', 'ice', 'flying'),
+
+(226, 'Mantine', 'water', 'flying'),
+
+(227, 'Skarmory', 'steel', 'flying'),
+
+(228, 'Houndour', 'dark', 'fire'),
+(229, 'Houndoom', 'dark', 'fire'),
+
+(230, 'Kingdra', 'water', 'dragon');
+
+
+
+
+
+
+
+
+
