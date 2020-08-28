@@ -16,6 +16,11 @@ $i = 0;
 <h2><?=$header?></h2>
 <hr />
 
+@if(count($pokemon) == 0)
+<div class="center">
+  <h3>Looks like you don't have ant pokemon yet. Head to the <a href="/pokemon" >Pokémon</a> tab to catch some!</h3>
+</div>
+  @endif
 
 <div class="pokemon-container">
   @foreach($pokemon as $key => $p)
@@ -23,17 +28,17 @@ $i = 0;
   {{-- Header to Indicate the Generation of Pokemon --}}
   @if($parent == 'pokemon')
     @if($p->Id == 1)
-    <form class="generation" id="gen-1">
-      <h1>Generation 1</h1>
-    </form>
+      <form class="generation" id="gen-1">
+        <h1>Generation 1</h1>
+      </form>
     @elseif($p->Id == 152)
-    <form class="generation" id="gen-2">
-      <h1>Generation 2</h1>
-    </form>
+      <form class="generation" id="gen-2">
+        <h1>Generation 2</h1>
+      </form>
     @elseif($p->Id == 252)
-    <form class="generation" id="gen-3">
-      <h1>Generation 3</h1>
-    </form>
+      <form class="generation" id="gen-3">
+        <h1>Generation 3</h1>
+      </form>
     @endif
   @endif
 
