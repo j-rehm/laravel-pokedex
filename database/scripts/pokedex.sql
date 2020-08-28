@@ -6,6 +6,7 @@ CREATE DATABASE pokedex;
 USE pokedex;
 
 /* Pokemon table */
+/* All necessary information about a pokemon */
 DROP TABLE IF EXISTS Pokemon;
 CREATE TABLE Pokemon (
   Id INT NOT NULL PRIMARY KEY,
@@ -17,6 +18,7 @@ CREATE TABLE Pokemon (
 );
 
 /* Trainer table */
+/* Basic information about the trainer */
 DROP TABLE IF EXISTS Trainers;
 CREATE TABLE Trainers (
   Id INT NOT NULL AUTO_INCREMENT PRIMARY KEY, 
@@ -24,6 +26,8 @@ CREATE TABLE Trainers (
   Password VARCHAR(25) NOT NULL
 );
 
+/* Team members table */
+/* Used to store relationships between pokemon and trainers */
 DROP TABLE IF EXISTS TeamMembers;
 CREATE TABLE TeamMembers (
   TrainerId INT NOT NULL,
